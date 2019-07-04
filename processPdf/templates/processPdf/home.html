@@ -55,13 +55,16 @@
       <h1 class="jumbotron-heading">Extracto</h1>
       <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
       <div class="row justify-content-md-center">
-     
+        <form method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
             <div class="input-group mb-3 col-6">
                 <!-- <div class="input-group-prepend">
                   <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
                 </div> -->
+                
+                <!-- {{ form.as_p }} -->
                 <div class="custom-file needs-validation">
-                  <input type="file" class="custom-file-input" id="File01" aria-describedby="inputGroupFileAddon01">
+                  <input type="file" class="custom-file-input" name = "file" id="File01" aria-describedby="inputGroupFileAddon01">
                   <label class="custom-file-label text-muted" for="File01">Choose file</label>
                   
                   <!-- <div class="valid-feedback">
@@ -72,9 +75,10 @@
                   </div> -->
                 </div>
                 <div class="input-group-append">
-                  <button class="btn btn-outline-primary" type="button" id="inputGroupFileAddon01">Extract</button>
+                  <button class="btn btn-outline-primary" type="submit" id="inputGroupFileAddon01">Extract</button>
                 </div>
               </div>
+           </form>
       </div>
 
       <p>
